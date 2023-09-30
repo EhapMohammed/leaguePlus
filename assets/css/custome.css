@@ -1,0 +1,130 @@
+/*
+* custome.css
+* File include item for our custome css only
+******************************************************************************/
+/* .card-datatable
+{
+  overflow-x: scroll;
+} */
+p {
+  margin: 0;
+}
+
+.Statistics-card-body {
+  padding: 1rem;
+}
+
+.Statistics-card-icon {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+}
+
+.Statistics-card-body h5 {
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -0.56px;
+}
+
+.Statistics-card-body .Statistics-num span:nth-of-type(2) {
+  color: #8F8E91;
+  font-size: 0.81em;
+  font-weight: 500;
+  line-height: 20px;
+  /* 142.857% */
+  letter-spacing: 0.07px;
+}
+.Statistics-card-body .Statistics-num a
+{
+  color:  #6149AF;
+  font-size: 0.81em;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px; /* 150% */
+  text-decoration-line: underline;
+}
+
+.table>:not(caption)>*>* {
+  padding: .55rem .3rem !important;
+}
+
+table tbody {
+  font-size: 14px;
+}
+
+.collapse-item-head
+{
+  color: #0C090F;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px; /* 142.857% */
+  letter-spacing: 0.07px;
+}
+.collapse-item-body td:nth-child(4),
+.collapse-item-body td:nth-child(5)
+{
+  color: #0C090F;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px; /* 142.857% */
+  letter-spacing: 0.07px;
+
+}
+
+.collapse-item-head,
+.collapse-item-body
+{
+  display: none;
+}
+.collapse-item-head.show,
+.collapse-item-body.show
+{
+  display: table-row;
+  background-color: #eeedf3;
+  border-right: 1px solid #6149AF;
+  border-left: 1px solid #6149AF;
+}
+table tbody tr td:first-of-type {
+  cursor: pointer;
+}
+/* matches page */
+.match-name-td
+{
+  display: flex;
+  align-items: center;
+  gap: .25rem;
+}
+
+.match-name-td div
+{
+  display: flex;
+  align-items: center;
+}
+.match-name-td img
+{
+  height: 28px;
+  width: 28px;
+}
+
+.match-name-td .match-vs
+{
+  color: #6149AF;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+/* filter */
+/* #template-customizer.template-customizer-open {
+  -webkit-transition-delay: .1s;
+  -o-transition-delay: .1s;
+  transition-delay: .1s;
+  -webkit-transform: none !important;
+  -ms-transform: none !important;
+  transform: none !important;
+} */
