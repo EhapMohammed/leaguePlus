@@ -572,37 +572,42 @@
     <div class="d-flex justify-content-between align-items-center p-3">
       <div class="d-flex align-items-center gap-2">
         <p class="fw-bold m-0">League</p>
-        <a href="league.html" class="btn bg-label-primary">Admin Created</a>
-        <a href="league-user-created.html" class="btn border border-light ">User Created</a>
+        <a href="league.html" class="btn border border-light">Admin Created</a>
+        <a href="league-user-created.html" class="btn bg-label-primary">User Created</a>
       </div>
       <div class="d-flex gap-2">
         <div class="input-group input-group-merge">
           <span class="input-group-text" id="basic-addon-search31"><i class="ti ti-search"></i></span>
           <input type="text" class="form-control" placeholder="Search league..." aria-label="Search..." aria-describedby="basic-addon-search31" />
         </div>
-        <button class="btn btn-primary overflow-visible" data-bs-toggle="modal" data-bs-target="#add_league">
-          <i class="fa fa-plus me-2"></i>Add League</button>
+        <button class="btn btn-primary overflow-visible"><i class="fa fa-plus me-2"></i>Add League</button>
       </div>
     </div>
     <table class="dt-scrollableTable table">
       <thead>
         <tr>
           <th>Index</th>
-          <th>League Icon</th>
+          <th>Logo</th>
           <th>League name</th>
-          <th>Sponsor Info</th>
-          <th>Updated</th>
-          <th>Status</th>
-          <th>Action</th>
+          <th>Created By</th>
+          <th>League Type</th>
+          <th>Privacy</th>
+          <th>created</th>
+          <td>Status</td>
+          <td>Action</td>
         </tr>
       </thead>
       <tbody>
       <tr>
         <td>1</td>
-        <td><img src="../../assets/img/avatars/Image.png" alt=""></td>
-        <td>Champions League</td>
-        <td><a href="" class="text-primary text-decoration-underline" href="javascript:void(0);"  data-bs-toggle="modal" data-bs-target="#sponsor_Detials">View Details</a></td>
-        <td>21 day`s ago</td>
+        <td><img src="../../assets/img/avatars/user-created-league-logo.png" alt=""></td>
+        <td>UK-Spanish League</td>
+        <td>ms12k</td>
+        <td><img src="../../assets/img/avatars/spanish-league-logo.png" alt="" class="me-2">
+          Spanish League
+        </td>
+        <td>General</td>
+        <td>26 Jul, 2023</td>
         <td><span class="badge bg-label-success me-1">Active</span></td>
         <td>
           <div class="dropdown text-center">
@@ -651,29 +656,7 @@
   </div>
 </div>
 <!--/ Scrollable -->
-<!-- add league modal 1 -->
-<div class="modal fade" id="add_league" aria-hidden="true" aria-labelledby="add_league_Label" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="add_league_Label">Add League</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body ">
-        <div class="mb-3">
-          <label for="html5-url-input" class="col-md-2 col-form-label">API URL</label>
-          <div class="col-12">
-            <input class="form-control" type="url"  id="html5-url-input" />
-          </div>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">Cancel</button>
-        <button class="btn btn-primary"  data-bs-dismiss="modal">Add league</button>
-      </div>
-    </div>
-  </div>
-</div>
+
           <!-- Remove league confirmation modal 2 -->
           <div class="modal fade" id="delete_league" aria-hidden="true" aria-labelledby="delete_league_Label" tabindex="-1">
             <div class="modal-dialog modal-dialog-centered">
@@ -697,88 +680,6 @@
               </div>
             </div>
           </div>
-
-
-          <!-- sponsor_Detials Modal 1 -->
-          <div class="modal fade" id="sponsor_Detials" tabindex="-1" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="sponsor_DetialsTitle">sponsor Detials</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  <table class="w-100 p-3">
-                    <thead class="bg-light">
-                      <th>Index</th>
-                      <th>Sponsor Icon</th>
-                      <th>Sponsor Name</th>
-                      <th>Action</th>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>1</td>
-                        <td><img src="../../assets/img/avatars/Last.fm-Logo.wine.png" alt=""></td>
-                        <td>Lost.FM internetional</td>
-                        <td>
-                          <button class="btn p-0" data-bs-target="#modalToggle3" data-bs-toggle="modal" data-bs-dismiss="modal">
-                          <i class="fa fa-pen me-3"></i>
-                          </button>
-                          <button class="btn p-0" data-bs-target="#modalToggle2" data-bs-toggle="modal" data-bs-dismiss="modal">
-                            <i class="fa fa-trash"></i>
-                          </button>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Remove sponsor confirmation modal 2 -->
-          <div class="modal fade" id="modalToggle2" aria-hidden="true" aria-labelledby="modalToggleLabel2" tabindex="-1">
-            <div class="modal-dialog modal-dialog-centered">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body d-flex align-items-center flex-column ">
-                  <div class="modal-remove-icon-div rounded-circle mb-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44" fill="none">
-                      <path d="M7.33341 14.6666H36.6667V38.5C36.6667 39.5125 35.846 40.3333 34.8334 40.3333H9.16675C8.15423 40.3333 7.33341 39.5125 7.33341 38.5V14.6666ZM12.8334 9.16663V5.49996C12.8334 4.48745 13.6542 3.66663 14.6667 3.66663H29.3334C30.346 3.66663 31.1667 4.48745 31.1667 5.49996V9.16663H40.3334V12.8333H3.66675V9.16663H12.8334ZM16.5001 7.33329V9.16663H27.5001V7.33329H16.5001ZM16.5001 22V33H20.1667V22H16.5001ZM23.8334 22V33H27.5001V22H23.8334Z" fill="#D91218"/>
-                    </svg>
-                  </div>
-                  <p class="fw-bold">Are you sure want to delete this Sponsor from league?</p>
-                  <p class="text-muted">Once you send the sponsor it can not be undone. </p>
-                </div>
-                <div class="modal-footer d-flex justify-content-center">
-                  <button type="button" class="btn btn-label-secondary" data-bs-target="#sponsor_Detials" data-bs-toggle="modal" data-bs-dismiss="modal">No, Cancel</button>
-                  <button class="btn btn-primary"  data-bs-dismiss="modal">Yes, Delete</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Edit modal 3 -->
-          <div class="modal fade" id="modalToggle3" aria-hidden="true" aria-labelledby="modalToggleLabel3" tabindex="-1">
-            <div class="modal-dialog modal-dialog-centered">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="modalToggleLabel3">Edit Sponsor</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    no Ui for it 
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">No, Cancel</button>
-                  <button class="btn btn-primary" data-bs-target="#sponsor_Detials" data-bs-toggle="modal" data-bs-dismiss="modal">Back to first</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- end of sponsor_Detials -->
           </div>
           <!-- / Content -->
 

@@ -118,6 +118,17 @@ table tbody tr td:first-of-type {
   font-weight: 600;
   line-height: normal;
 }
+/* league */
+.modal-remove-icon-div
+{
+  width: 100px;
+  height: 100px;
+  background-color: #FBE7E8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 
 /* filter */
 /* #template-customizer.template-customizer-open {
