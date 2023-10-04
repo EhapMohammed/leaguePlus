@@ -38,28 +38,31 @@
   <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;display=swap" rel="stylesheet">
 
-  <!-- Icons -->
-  <link rel="stylesheet" href="../../assets/vendor/fonts/fontawesome.css" />
-  <link rel="stylesheet" href="../../assets/vendor/fonts/tabler-icons.css"/>
-  <link rel="stylesheet" href="../../assets/vendor/fonts/flag-icons.css" />
+  
+    <!-- Icons -->
+    <link rel="stylesheet" href="../../assets/vendor/fonts/fontawesome.css" />
+    <link rel="stylesheet" href="../../assets/vendor/fonts/tabler-icons.css"/>
+    <link rel="stylesheet" href="../../assets/vendor/fonts/flag-icons.css" />
 
-  <!-- Core CSS -->
-  <link rel="stylesheet" href="../../assets/vendor/css/rtl/core.css" class="template-customizer-core-css" />
-  <link rel="stylesheet" href="../../assets/vendor/css/rtl/theme-default.css" class="template-customizer-theme-css" />
-  <link rel="stylesheet" href="../../assets/css/demo.css" />
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="../../assets/vendor/css/rtl/core.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="../../assets/vendor/css/rtl/theme-default.css" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="../../assets/css/demo.css" />
 
-  <!-- Vendors CSS -->
-  <link rel="stylesheet" href="../../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
-  <link rel="stylesheet" href="../../assets/vendor/libs/node-waves/node-waves.css" />
-  <link rel="stylesheet" href="../../assets/vendor/libs/typeahead-js/typeahead.css" />
-
+    <!-- Vendors CSS -->
+    <link rel="stylesheet" href="../../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+    <link rel="stylesheet" href="../../assets/vendor/libs/node-waves/node-waves.css" />
+    <link rel="stylesheet" href="../../assets/vendor/libs/typeahead-js/typeahead.css" />
+    <link rel="stylesheet" href="../../assets/vendor/libs/flatpickr/flatpickr.css" />
+<link rel="stylesheet" href="../../assets/vendor/libs/bootstrap-datepicker/bootstrap-datepicker.css" />
+<link rel="stylesheet" href="../../assets/vendor/libs/bootstrap-daterangepicker/bootstrap-daterangepicker.css" />
+<link rel="stylesheet" href="../../assets/vendor/libs/jquery-timepicker/jquery-timepicker.css" />
+<link rel="stylesheet" href="../../assets/vendor/libs/pickr/pickr-themes.css" />
 
   <!-- Helpers -->
   <script src="../../assets/vendor/js/helpers.js"></script>
 
-  <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
-  <!--? Template customizer: To hide customizer set displayCustomizer value false in config.js.  -->
-  <script src="../../assets/vendor/js/template-customizer.js"></script>
+ 
   <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
   <script src="../../assets/js/config.js"></script>
 
@@ -479,7 +482,7 @@
                 <img src="../../assets/img/avatars/1.png" alt class="h-auto rounded-circle">
               </div>
               <div class="">
-                      <span class="fw-semibold d-block">John Doe</span>
+                      <span class="fw-semibold filter-head d-block">John Doe</span>
                       <small class="text-muted">Admin</small>
                     </div>
             </a>
@@ -581,11 +584,12 @@
           20,202
         </p>
       </div>
-          <!-- <button class="btn btn-outline-primary template-customizer-open-btn">filter</button> -->
+          <button class="btn btn-outline-primary template-customizer-open-btn" 
+          data-bs-toggle="modal" data-bs-target="#filterModal">filter</button>
     </div>
-    <table class="dt-scrollableTable table">
+    <table class="dt-scrollableTable table users-table">
       <thead>
-        <tr>
+        <tr class="border-top border-light">
           <th></th>
           <th>User ID</th>
           <th>User Name</th>
@@ -599,7 +603,7 @@
       </thead>
       <tbody>
       <tr>
-        <td id="collapse-btn"><i class="fa fa-angle-down"></i></td>
+        <td><i id="collapse-btn" class="fa fa-angle-down"></i></td>
         <td>1</td>
         <td>Mohammed Ahmed</td>
         <td>mohammedl23@gmail.com</td>
@@ -612,9 +616,9 @@
             <div class="dropdown text-center">
               <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="ti ti-dots-vertical"></i></button>
               <div class="dropdown-menu">
-                <a class="dropdown-item d-flex align-items-center" href="javascript:void(0);"  data-bs-toggle="modal" data-bs-target="#modalCenter"><i class="fa-regular fa-paper-plane me-2"></i> Send notification</a>
-                <a class="dropdown-item d-flex align-items-center" href="javascript:void(0);"><i class="fa-solid fa-ban me-2"></i> Suspend user</a>
-                <a class="dropdown-item d-flex align-items-center" href="javascript:void(0);"><i class="ti ti-trash me-2"></i> Delete account</a>
+                <a class="dropdown-item d-flex align-items-center" href="javascript:void(0);"  data-bs-toggle="modal" data-bs-target="#modalNotification"><i class="fa-regular fa-paper-plane me-2"></i> Send notification</a>
+                <a class="dropdown-item d-flex align-items-center" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#deletUserModal"><i class="fa-solid fa-ban me-2"></i> Suspend user</a>
+                <a class="dropdown-item d-flex align-items-center" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#deletUserModal"><i class="ti ti-trash me-2"></i> Delete account</a>
               </div>
             </div>
           </td>
@@ -667,7 +671,7 @@
             <div class="dropdown text-center">
               <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="ti ti-dots-vertical"></i></button>
               <div class="dropdown-menu">
-                <a class="dropdown-item d-flex align-items-center" href="javascript:void(0);"  data-bs-toggle="modal" data-bs-target="#modalCenter"><i class="fa-regular fa-paper-plane me-2"></i> Send notification</a>
+                <a class="dropdown-item d-flex align-items-center" href="javascript:void(0);"  data-bs-toggle="modal" data-bs-target="#modalNotification"><i class="fa-regular fa-paper-plane me-2"></i> Send notification</a>
                 <a class="dropdown-item d-flex align-items-center" href="javascript:void(0);"><i class="fa-solid fa-ban me-2"></i> Suspend user</a>
                 <a class="dropdown-item d-flex align-items-center" href="javascript:void(0);"><i class="ti ti-trash me-2"></i> Delete account</a>
               </div>
@@ -713,7 +717,7 @@
     </table>
     <div class="d-flex justify-content-between align-items-center p-3">
       <p class="m-0">Showing 1-10 from 24,220</p>
-      <nav aria-label="Page navigation">
+      <nav aria-label="Page navigation" class="d-flex align-items-center">
         <ul class="pagination pagination-sm">
           <li class="page-item prev">
             <a class="page-link" href="javascript:void(0);"><i class="tf-icon fs-6 ti ti-chevrons-left"></i></a>
@@ -744,101 +748,125 @@
 <!--/ Scrollable -->
 
 
-   <!-- filter -->
-                <div id="filter-customizer" class="invert-bg-white" style="visibility: visible">
-                   <a href="javascript:void(0)"
-                    class="template-customizer-open-btn" tabindex="-1"></a>
-                  <div class="p-4 m-0 lh-1 border-bottom template-customizer-header">
-                    <h4 class="template-customizer-t-panel_header mb-2">TEMPLATE CUSTOMIZER</h4>
-                    <p class="template-customizer-t-panel_sub_header mb-0">Customize and preview in real time</p> <a
-                      href="javascript:void(0)" class="btn-close template-customizer-close-btn fw-light px-4 py-2 text-body"
-                      tabindex="-1"></a>
-                  </div>
-                  <div class="template-customizer-inner pt-4">
-                    <div class="template-customizer-theming">
-                      <h5 class="m-0 px-4 py-4 lh-1 text-light d-block"> <span
-                          class="template-customizer-t-theming_header">THEMING</span> </h5>
-                      <div class="m-0 px-4 pb-3 template-customizer-themes w-100"> <label for="customizerTheme"
-                          class="form-label template-customizer-t-theme_label">Themes</label>
-                        <div class="row row-cols-lg-auto g-3 align-items-center template-customizer-themes-options">
-                          <div class="col-12">
-                            <div class="form-check"><input class="form-check-input" type="radio" name="themeRadios"
-                                id="themeRadiostheme-default" value="theme-default" checked="checked"><label class="form-check-label"
-                                for="themeRadiostheme-default">Default</label></div>
-                          </div>
-                          <div class="col-12">
-                            <div class="form-check"><input class="form-check-input" type="radio" name="themeRadios"
-                                id="themeRadiostheme-semi-dark" value="theme-semi-dark"><label class="form-check-label"
-                                for="themeRadiostheme-semi-dark">Semi Dark</label></div>
-                          </div>
-                          <div class="col-12">
-                            <div class="form-check"><input class="form-check-input" type="radio" name="themeRadios"
-                                id="themeRadiostheme-bordered" value="theme-bordered"><label class="form-check-label"
-                                for="themeRadiostheme-bordered">Bordered</label></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="m-0 px-4 pb-3 pt-1 template-customizer-style w-100"> <label for="customizerStyle"
-                          class="form-label d-block template-customizer-t-style_label">Style (Mode)</label> <label
-                          class="switch switch-sm"> <span class="switch-label template-customizer-t-style_switch_light">Light</span>
-                          <input type="checkbox" class="switch-input"> <span class="switch-toggle-slider"> <span
-                              class="switch-on"></span> <span class="switch-off"></span> </span> <span
-                            class="switch-label template-customizer-t-style_switch_dark">Dark</span> </label> </div>
-                    </div>
-                    <div class="template-customizer-layout">
-                      <hr class="m-0">
-                      <h5 class="m-0 px-4 py-4 lh-1 text-light d-block"> <span class="template-customizer-t-layout_header">LAYOUT</span>
-                      </h5>
-                      <div class="m-0 px-4 pb-3 d-block template-customizer-layoutType"> <label for="customizerStyle"
-                          class="form-label d-block template-customizer-t-layout_label">Layout (Menu)</label>
-                        <div class="row row-cols-lg-auto g-3 align-items-center template-customizer-layouts-options">
-                          <div class="col-12">
-                            <div class="form-check"> <input class="form-check-input" type="radio" name="layoutRadios"
-                                id="layoutRadios-static" value="static"> <label
-                                class="form-check-label template-customizer-t-layout_static" for="layoutRadios-static">Static</label>
-                            </div>
-                          </div>
-                          <div class="col-12">
-                            <div class="form-check"> <input class="form-check-input" type="radio" name="layoutRadios"
-                                id="layoutRadios-fixed" value="fixed" checked="checked"> <label
-                                class="form-check-label template-customizer-t-layout_fixed" for="layoutRadios-fixed">Fixed</label>
-                            </div>
-                          </div>
-                        </div>
-                      </div> <label
-                        class="m-0 px-4 pb-3 d-flex media align-items-middle justify-content-between template-customizer-layoutNavbarFixed">
-                        <span class="template-customizer-t-layout_navbar_label">Fixed navbar</span> <label
-                          class="switch switch-sm pe-4"> <input type="checkbox" class="switch-input" checked="checked"> <span
-                            class="switch-toggle-slider"> <span class="switch-on"></span> <span class="switch-off"></span> </span>
-                        </label> </label> <label
-                        class="m-0 px-4 pb-3 d-flex media align-items-middle justify-content-between template-customizer-layoutFooterFixed">
-                        <span class="template-customizer-t-layout_footer_label">Fixed footer</span> <label
-                          class="switch switch-sm pe-4"> <input type="checkbox" class="switch-input"> <span
-                            class="switch-toggle-slider"> <span class="switch-on"></span> <span class="switch-off"></span> </span>
-                        </label> </label> <label
-                        class="m-0 px-4 pb-3 d-flex media align-items-middle justify-content-between template-customizer-showDropdownOnHover">
-                        <span class="template-customizer-t-layout_dd_open_label">Dropdown on hover</span> <label
-                          class="switch switch-sm pe-4"> <input type="checkbox" class="switch-input" checked="checked"> <span
-                            class="switch-toggle-slider"> <span class="switch-on"></span> <span class="switch-off"></span> </span>
-                        </label> </label>
-                    </div>
-                    <div class="template-customizer-misc">
-                      <hr class="m-0">
-                      <h5 class="m-0 px-4 py-4 lh-1 text-light d-block"> <span class="template-customizer-t-misc_header">MISC</span>
-                      </h5> <label
-                        class="m-0 px-4 pb-3 d-flex media align-items-middle justify-content-between template-customizer-rtl"> <span
-                          class="template-customizer-t-rtl_label">RTL direction</span> <label class="switch switch-sm pe-4"> <input
-                            type="checkbox" class="switch-input"> <span class="switch-toggle-slider"> <span class="switch-on"></span>
-                            <span class="switch-off"></span> </span> </label> </label>
-                    </div>
-                  </div>
+   <!-- filter modal -->
+   <div class="modal filterModal modal-top fade" id="filterModal" tabindex="-1">
+    <div class="modal-dialog">
+      <form class="modal-content">
+        <div class="modal-header border-bottom border-light pb-3">
+          <h5 class="modal-title" id="filterModalTitle">Filter</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="col-md border-bottom border-light pb-3">
+            <div class=" fw-semibold filter-head">Created date</div>
+            <div class="form-check mt-3">
+              <input name="default-radio-1" class="form-check-input" type="radio" value="" id="Default" />
+              <label class="form-check-label" for="Default">
+                Default
+              </label>
+            </div>
+            <div class="form-check mt-3">
+              <input name="default-radio-1" class="form-check-input" type="radio" value="" id="New" />
+              <label class="form-check-label" for="New">
+                Date created ( New to Old)
+              </label>
+            </div>
+            <div class="form-check mt-3">
+              <input name="default-radio-1" class="form-check-input" type="radio" value="" id="Old" />
+              <label class="form-check-label" for="Old">
+                Date created ( Old to new)
+              </label>
+            </div>
+            <div class="form-check mt-3">
+              <input name="default-radio-1" class="form-check-input" type="radio" value="" id="Custom" />
+              <label class="form-check-label" for="Custom">
+                Custom
+              </label>
+              <input placeholder="Start date    I    End Date" type="text" id="bs-rangepicker-basic" class="form-control mt-3" />
+            </div>
+            </div>
+            <div class="col-md border-bottom border-light py-3">
+              <div class=" fw-semibold filter-head">Account status</div>
+              <div class="form-check mt-3">
+                <input name="default-radio-1" class="form-check-input" type="radio" value="" id="Default" />
+                <label class="form-check-label" for="Default">
+                  Default
+                </label>
+              </div>
+              <div class="form-check mt-3">
+                <input name="default-radio-1" class="form-check-input" type="radio" value="" id="New" />
+                <label class="form-check-label" for="New">
+                  Active account
+                </label>
+              </div>
+              <div class="form-check mt-3">
+                <input name="default-radio-1" class="form-check-input" type="radio" value="" id="Old" />
+                <label class="form-check-label" for="Old">
+                  Suspended account
+                </label>
+              </div>
+              
+            </div>
+            <div class="col-md border-bottom border-light py-3">
+                <div class=" fw-semibold filter-head">Active status</div>
+                <div class="form-check mt-3">
+                  <input name="default-radio-1" class="form-check-input" type="radio" value="" id="Default" />
+                  <label class="form-check-label" for="Default">
+                    Default
+                  </label>
                 </div>
+                <div class="form-check mt-3">
+                  <input name="default-radio-1" class="form-check-input" type="radio" value="" id="New" />
+                  <label class="form-check-label" for="New">
+                    Currently online
+                  </label>
+                </div>
+                <div class="form-check mt-3">
+                  <input name="default-radio-1" class="form-check-input" type="radio" value="" id="Old" />
+                  <label class="form-check-label" for="Old">
+                    Currently offline
+                  </label>
+                </div>
+                
+            </div>
+            <div class="col-md pt-3">
+                  <div class="text-light fw-semibold filter-head">Suggested</div>
+                  <div class="form-check form-check-primary mt-3">
+                    <input class="form-check-input" type="checkbox" value="" id="customCheckPrimary"/>
+                    <label class="form-check-label" for="customCheckPrimary">
+                      <img src="../../assets/img/avatars/Flag-1.png" alt=""> Primary</label>
+                  </div>
+                  <div class="form-check form-check-primary mt-3">
+                    <input class="form-check-input" type="checkbox" value="" id="customCheckPrimary"/>
+                    <label class="form-check-label" for="customCheckPrimary">
+                      <img src="../../assets/img/avatars/Flag-1.png" alt=""> United Kingdom</label>
+                  </div>
+                  <div class="form-check form-check-primary mt-3">
+                    <input class="form-check-input" type="checkbox" value="" id="customCheckPrimary"/>
+                    <label class="form-check-label" for="customCheckPrimary">
+                      <img src="../../assets/img/avatars/Flag-1.png" alt=""> Qatar</label>
+                  </div>
+                  <div class="form-check form-check-primary mt-3">
+                    <input class="form-check-input" type="checkbox" value="" id="customCheckPrimary"/>
+                    <label class="form-check-label" for="customCheckPrimary">
+                      <img src="../../assets/img/avatars/Flag-1.png" alt=""> Germany</label>
+                  </div>
+                  
+            </div>
+        </div>
+        <div class="modal-footer border-top border-light">
+          <button type="button" class="btn btn-label-secondary" >Reset Filter</button>
+          <button type="button" class="btn btn-primary">View Result</button>
+        </div>
+      </form>
+    </div>
+  </div>
           <!-- Modal -->
-          <div class="modal fade" id="modalCenter" tabindex="-1" aria-hidden="true">
+          <div class="modal fade" id="modalNotification" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="modalCenterTitle">Create notification</h5>
+                  <h5 class="modal-title" id="modalNotificationTitle">Create notification</h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -859,6 +887,96 @@
                 <div class="modal-footer">
                   <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">Close</button>
                   <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Modal -->
+          <div class="modal fade" id="deletUserModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <!-- <h5 class="modal-title" id="modalNotificationTitle">Create notification</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                 --> 
+                </div> 
+                <div class="modal-body">
+                  <div class="card mb-4">
+                    <div class="card-body">
+                      <div class="user-avatar-section">
+                        <div class=" d-flex align-items-center flex-column">
+                          <img class="img-fluid rounded mb-3 pt-1 mt-4" src="../../assets/img/avatars/15.png" height="100" width="100" alt="User avatar" />
+                          <div class="user-info text-center">
+                            <h4 class="mb-2">Violet Mendoza</h4>
+                            <span class="badge bg-label-secondary mt-1">Author</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="d-flex justify-content-around flex-wrap mt-3 pt-3 pb-4 border-bottom">
+                        <div class="d-flex align-items-start me-4 mt-3 gap-2">
+                          <span class="badge bg-label-primary p-2 rounded"><i class='ti ti-checkbox ti-sm'></i></span>
+                          <div>
+                            <p class="mb-0 fw-semibold">1.23k</p>
+                            <small>Tasks Done</small>
+                          </div>
+                        </div>
+                        <div class="d-flex align-items-start mt-3 gap-2">
+                          <span class="badge bg-label-primary p-2 rounded"><i class='ti ti-briefcase ti-sm'></i></span>
+                          <div>
+                            <p class="mb-0 fw-semibold">568</p>
+                            <small>Projects Done</small>
+                          </div>
+                        </div>
+                      </div>
+                      <p class="mt-4 small text-uppercase text-muted">Details</p>
+                      <div class="info-container">
+                        <ul class="list-unstyled">
+                          <li class="mb-2">
+                            <span class="fw-semibold me-1">Username:</span>
+                            <span>violet.dev</span>
+                          </li>
+                          <li class="mb-2 pt-1">
+                            <span class="fw-semibold me-1">Email:</span>
+                            <span>vafgot@vultukir.org</span>
+                          </li>
+                          <li class="mb-2 pt-1">
+                            <span class="fw-semibold me-1">Status:</span>
+                            <span class="badge bg-label-success">Active</span>
+                          </li>
+                          <li class="mb-2 pt-1">
+                            <span class="fw-semibold me-1">Role:</span>
+                            <span>Author</span>
+                          </li>
+                          <li class="mb-2 pt-1">
+                            <span class="fw-semibold me-1">Tax id:</span>
+                            <span>Tax-8965</span>
+                          </li>
+                          <li class="mb-2 pt-1">
+                            <span class="fw-semibold me-1">Contact:</span>
+                            <span>(123) 456-7890</span>
+                          </li>
+                          <li class="mb-2 pt-1">
+                            <span class="fw-semibold me-1">Languages:</span>
+                            <span>French</span>
+                          </li>
+                          <li class="pt-1">
+                            <span class="fw-semibold me-1">Country:</span>
+                            <span>England</span>
+                          </li>
+                        </ul>
+                        <div class="d-flex justify-content-center">
+                          <a href="javascript:;" class="btn btn-primary"><i class="fa-solid fa-ban me-2"></i> Suspend User</a>
+                          <a href="javascript:;" class="btn btn-danger me-3" ><i class="ti ti-trash me-2"></i> delete User</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <!-- <button type="button" class="btn btn-primary">Save changes</button>
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button> -->
+
                 </div>
               </div>
             </div>
@@ -893,6 +1011,8 @@
 
   
 
+ 
+
   <!-- Core JS -->
   <!-- build:js assets/vendor/js/core.js -->
   <script src="../../assets/vendor/libs/jquery/jquery.js"></script>
@@ -909,11 +1029,20 @@
   <!-- endbuild -->
 
   <!-- Vendors JS -->
-  
-  
+  <script src="../../assets/vendor/libs/moment/moment.js"></script>
+<script src="../../assets/vendor/libs/flatpickr/flatpickr.js"></script>
+<script src="../../assets/vendor/libs/bootstrap-datepicker/bootstrap-datepicker.js"></script>
+<script src="../../assets/vendor/libs/bootstrap-daterangepicker/bootstrap-daterangepicker.js"></script>
+<script src="../../assets/vendor/libs/jquery-timepicker/jquery-timepicker.js"></script>
+<script src="../../assets/vendor/libs/pickr/pickr.js"></script>
 
   <!-- Main JS -->
   <script src="../../assets/js/main.js"></script>
+
+  <!-- Page JS -->
+  <script src="../../assets/js/forms-pickers.js"></script>
+  <script src="../../assets/js/custome.js"></script>
+
 
   <!-- Page JS -->
   

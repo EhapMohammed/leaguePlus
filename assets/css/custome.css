@@ -79,6 +79,7 @@ table tbody {
 .collapse-item-body
 {
   display: none;
+  transition: display .5s ease-in-out;
 }
 .collapse-item-head.show,
 .collapse-item-body.show
@@ -88,8 +89,9 @@ table tbody {
   border-right: 1px solid #6149AF;
   border-left: 1px solid #6149AF;
 }
-table tbody tr td:first-of-type {
+.users-table tbody tr td:first-of-type {
   cursor: pointer;
+  text-align: center;
 }
 /* matches page */
 .match-name-td
@@ -131,11 +133,22 @@ table tbody tr td:first-of-type {
 
 
 /* filter */
-/* #template-customizer.template-customizer-open {
-  -webkit-transition-delay: .1s;
-  -o-transition-delay: .1s;
-  transition-delay: .1s;
-  -webkit-transform: none !important;
-  -ms-transform: none !important;
-  transform: none !important;
-} */
+.filterModal .modal-dialog
+{
+  position: absolute;
+    right: 0;
+    top: 0;
+    height: 100vh;
+}
+.filterModal .modal-dialog .modal-content
+{
+  height: 100%;
+  overflow-y: auto;
+}
+.filterModal .filter-head
+{
+  color: #0C090F;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 28px; /* 155.556% */
+}
