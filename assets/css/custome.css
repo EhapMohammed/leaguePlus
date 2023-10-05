@@ -12,6 +12,7 @@ p {
 
 .Statistics-card-body {
   padding: 1rem;
+  height: 100%;
 }
 
 .Statistics-card-icon {
@@ -45,7 +46,13 @@ p {
   line-height: 18px; /* 150% */
   text-decoration-line: underline;
 }
-
+.above-table
+{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem !important;
+}
 .table>:not(caption)>*>* {
   padding: .55rem .3rem !important;
 }
@@ -92,6 +99,35 @@ table tbody {
 .users-table tbody tr td:first-of-type {
   cursor: pointer;
   text-align: center;
+}
+.tableFooter
+{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+@media (max-width:768px) {
+  .Statistics-card-body h5
+  {
+    font-size: 16px;
+    letter-spacing: -0.56px;
+  }
+  .above-table
+  {
+    justify-content: center;
+    gap: .5rem;
+    flex-wrap: wrap;
+  }
+  .card-datatable
+  {
+    overflow-x: scroll;
+  }
+  .tableFooter
+{
+  justify-content: center;
+  gap: .5rem;
+}
 }
 /* matches page */
 .match-name-td
@@ -151,4 +187,25 @@ table tbody {
   font-size: 18px;
   font-weight: 600;
   line-height: 28px; /* 155.556% */
+}
+/* settings */
+.img-btn-div
+{
+  bottom: 0;
+  right: 0px;
+}
+.img-btn-div label
+{
+  padding: 5px;
+}
+/* modal */
+.modal-header
+{
+  border-bottom: 1px solid rgba(75,70,92,.05) !important;
+  padding-bottom: 20px;
+}
+.modal-footer
+{
+  border-top: 1px solid rgba(75,70,92,.05) !important;
+  padding-top: 20px;
 }
