@@ -169,19 +169,7 @@ table tbody {
 
 
 /* filter */
-.filterModal .modal-dialog
-{
-  position: absolute;
-    right: 0;
-    top: 0;
-    height: 100vh;
-}
-.filterModal .modal-dialog .modal-content
-{
-  height: 100%;
-  overflow-y: auto;
-}
-.filterModal .filter-head
+.offcanvas-body .filter-head
 {
   color: #0C090F;
   font-size: 18px;
@@ -209,3 +197,9 @@ table tbody {
   border-top: 1px solid rgba(75,70,92,.05) !important;
   padding-top: 20px;
 }
+/* Notification */
+/* .createNotification-dropdown .dropdown-item:hover i,
+.createNotification-dropdown .dropdown-item:focus i
+ {
+  display: block;
+ } */

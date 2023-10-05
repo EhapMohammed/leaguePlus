@@ -570,8 +570,8 @@
     <div class="above-table">
       <div class="d-flex align-items-center gap-2 flex-wrap">
         <p class="fw-bold m-0">League</p>
-        <div class="d-flex align-items-center gap-2">
-        <a href="league.html" class="btn border border-light">Admin Created</a>
+        <div class="d-flex align-items-center gap-2 rounded p-1 border border-light">
+        <a href="league.html" class="btn">Admin Created</a>
         <a href="league-user-created.html" class="btn bg-label-primary">User Created</a>
       </div>
       </div>
@@ -580,7 +580,8 @@
           <span class="input-group-text" id="basic-addon-search31"><i class="ti ti-search"></i></span>
           <input type="text" class="form-control" placeholder="Search league..." aria-label="Search..." aria-describedby="basic-addon-search31" />
         </div>
-        <button class="btn btn-primary overflow-visible"><i class="fa fa-plus me-2"></i>Add League</button>
+        <button class="btn btn-primary overflow-visible" data-bs-toggle="offcanvas" data-bs-target="#filterModal">
+          <i class="fa fa-filter me-2"></i>Filter</button>
       </div>
     </div>
     <table class="dt-scrollableTable table">
@@ -657,6 +658,123 @@
 </div>
 <!--/ Scrollable -->
 
+   <!-- filter modal -->
+   <div class=" offcanvas offcanvas-end" id="filterModal" aria-hidden="true">
+    <div class="offcanvas-header my-1 border-bottom border-light">
+      <h5 class="offcanvas-title">Filter</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body pt-0 flex-grow-1">
+      <form>
+        <div class="col-md border-bottom border-light pb-3">
+          <div class=" fw-semibold filter-head">Created date</div>
+          <div class="form-check mt-3">
+            <input name="default-radio-1" class="form-check-input" type="radio" value="" id="Default" />
+            <label class="form-check-label" for="Default">
+              Default
+            </label>
+          </div>
+          <div class="form-check mt-3">
+            <input name="default-radio-1" class="form-check-input" type="radio" value="" id="New" />
+            <label class="form-check-label" for="New">
+              Date created ( New to Old)
+            </label>
+          </div>
+          <div class="form-check mt-3">
+            <input name="default-radio-1" class="form-check-input" type="radio" value="" id="Old" />
+            <label class="form-check-label" for="Old">
+              Date created ( Old to new)
+            </label>
+          </div>
+          <div class="form-check mt-3">
+            <input name="default-radio-1" class="form-check-input" type="radio" value="" id="Custom" />
+            <label class="form-check-label" for="Custom">
+              Custom
+            </label>
+            <input placeholder="Start date    I    End Date" type="text" id="bs-rangepicker-basic" class="form-control mt-3" />
+          </div>
+          </div>
+          <div class="col-md border-bottom border-light py-3">
+            <div class=" fw-semibold filter-head">Privacy</div>
+            <div class="form-check mt-3">
+              <input name="default-radio-1" class="form-check-input" type="radio" value="" id="Default" />
+              <label class="form-check-label" for="Default">
+                Default
+              </label>
+            </div>
+            <div class="form-check mt-3">
+              <input name="default-radio-1" class="form-check-input" type="radio" value="" id="New" />
+              <label class="form-check-label" for="New">
+                General
+              </label>
+            </div>
+            <div class="form-check mt-3">
+              <input name="default-radio-1" class="form-check-input" type="radio" value="" id="Old" />
+              <label class="form-check-label" for="Old">
+                Private
+              </label>
+            </div>
+            
+          </div>
+          <div class="col-md border-bottom border-light py-3">
+              <div class=" fw-semibold filter-head">Active status</div>
+              <div class="form-check mt-3">
+                <input name="default-radio-1" class="form-check-input" type="radio" value="" id="Default" />
+                <label class="form-check-label" for="Default">
+                  Default
+                </label>
+              </div>
+              <div class="form-check mt-3">
+                <input name="default-radio-1" class="form-check-input" type="radio" value="" id="New" />
+                <label class="form-check-label" for="New">
+                  Currently active
+                </label>
+              </div>
+              <div class="form-check mt-3">
+                <input name="default-radio-1" class="form-check-input" type="radio" value="" id="Old" />
+                <label class="form-check-label" for="Old">
+                  Recently finished
+                </label>
+              </div>
+              
+          </div>
+          <div class="col-md pt-3">
+            <div class=" fw-semibold filter-head">League type</div>
+            <div class="input-group input-group-merge mb-2">
+              <span class="input-group-text" id="basic-addon-search31"><i class="ti ti-search"></i></span>
+              <input type="text" class="form-control" placeholder="Search League..." aria-label="Search..." aria-describedby="basic-addon-search31" />
+            </div>
+                <div class="text-light fw-semibold filter-head">Suggested</div>
+                <div class="form-check form-check-primary mt-1">
+                  <input class="form-check-input" type="checkbox" value="" id="customCheckPrimary"/>
+                  <label class="form-check-label" for="customCheckPrimary">
+                    <img src="../../assets/img/avatars/Flag-1.png" alt=""> English Premier League</label>
+                </div>
+                <div class="form-check form-check-primary mt-3">
+                  <input class="form-check-input" type="checkbox" value="" id="customCheckPrimary"/>
+                  <label class="form-check-label" for="customCheckPrimary">
+                    <img src="../../assets/img/avatars/Flag-1.png" alt=""> United Kingdom</label>
+                </div>
+                <div class="form-check form-check-primary mt-3">
+                  <input class="form-check-input" type="checkbox" value="" id="customCheckPrimary"/>
+                  <label class="form-check-label" for="customCheckPrimary">
+                    <img src="../../assets/img/avatars/Flag-1.png" alt=""> Qatar</label>
+                </div>
+                <div class="form-check form-check-primary mt-3">
+                  <input class="form-check-input" type="checkbox" value="" id="customCheckPrimary"/>
+                  <label class="form-check-label" for="customCheckPrimary">
+                    <img src="../../assets/img/avatars/Flag-1.png" alt=""> Germany</label>
+                </div>
+                
+          </div>
+      </form>
+    </div>
+    <div class="mb-3 d-flex flex-wrap justify-content-around" >
+      <button type="button" class="btn btn-label-primary" data-bs-dismiss="offcanvas">Reset Filter</button>
+      <button type="button" class="btn btn-primary waves-effect" data-bs-dismiss="offcanvas">View Result</button>
+    </div>
+  </div>
+  <!-- /filter modal -->
           <!-- Remove league confirmation modal 2 -->
           <div class="modal fade" id="delete_league" aria-hidden="true" aria-labelledby="delete_league_Label" tabindex="-1">
             <div class="modal-dialog modal-dialog-centered">

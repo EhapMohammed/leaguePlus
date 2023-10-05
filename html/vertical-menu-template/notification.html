@@ -580,7 +580,7 @@
           <span class="input-group-text" id="basic-addon-search31"><i class="ti ti-search"></i></span>
           <input type="text" class="form-control" placeholder="Search by notification name..." aria-label="Search..." aria-describedby="basic-addon-search31" />
         </div>
-        <button class="btn btn-primary overflow-visible" data-bs-toggle="modal" data-bs-target="#add_league">
+        <button class="btn btn-primary overflow-visible" data-bs-toggle="modal" data-bs-target="#create_notification">
           <i class="fa fa-plus me-2"></i>Create Notification</button>
       </div>
     </div>
@@ -669,29 +669,48 @@
   </div>
 </div>
 <!--/ Scrollable -->
-<!-- add league modal 1 -->
-<div class="modal fade" id="add_league" aria-hidden="true" aria-labelledby="add_league_Label" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="add_league_Label">Add League</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body ">
-        <div class="mb-3">
-          <label for="html5-url-input" class="col-md-2 col-form-label">API URL</label>
-          <div class="col-12">
-            <input class="form-control" type="url"  id="html5-url-input" />
+          <!-- create notification modal 1 -->
+          <div class="modal fade" id="create_notification" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="create_notificationTitle">Create notification</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="row">
+                    <div class="col mb-3">
+                      <label for="nameWithTitle" class="form-label">Notification Name</label>
+                      <input type="text" id="nameWithTitle" class="form-control" placeholder="Enter notification name">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col mb-3">
+                      <label for="nameWithTitle" class="form-label">Notification for</label>
+                      <div class="btn-group w-100">
+                        <button type="button" class="btn border border-light dropdown-toggle d-flex justify-content-between align-items-center" data-bs-toggle="dropdown" aria-expanded="false">Select user base</button>
+                        <ul class="dropdown-menu createNotification-dropdown w-50">
+                          <li class="dropdown-item d-flex justify-content-between ">English User <i class=" fa fa-check-circle text-primary"></i></li>
+                          <li class="dropdown-item d-flex justify-content-between ">Arabic User </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row g-2">
+                    <div class="col mb-0">
+                      <label for="detailstextarea" class="form-label">Details</label>
+                      <textarea id="detailstextarea" col="5" class="form-control" placeholder="Type what you want to notify"></textarea>
+                    </div>
+                   
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save</button>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">Cancel</button>
-        <button class="btn btn-primary"  data-bs-dismiss="modal">Add league</button>
-      </div>
-    </div>
-  </div>
-</div>
           <!-- Remove league confirmation modal 2 -->
           <div class="modal fade" id="delete_league" aria-hidden="true" aria-labelledby="delete_league_Label" tabindex="-1">
             <div class="modal-dialog modal-dialog-centered">
@@ -717,45 +736,9 @@
           </div>
 
 
-          <!-- sponsor_Detials Modal 1 -->
-          <div class="modal fade" id="sponsor_Detials" tabindex="-1" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="sponsor_DetialsTitle">sponsor Detials</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  <table class="w-100 p-3">
-                    <thead class="bg-light">
-                      <th>Index</th>
-                      <th>Sponsor Icon</th>
-                      <th>Sponsor Name</th>
-                      <th>Action</th>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>1</td>
-                        <td><img src="../../assets/img/avatars/Last.fm-Logo.wine.png" alt=""></td>
-                        <td>Lost.FM internetional</td>
-                        <td>
-                          <button class="btn p-0" data-bs-target="#modalToggle3" data-bs-toggle="modal" data-bs-dismiss="modal">
-                          <i class="fa fa-pen me-3"></i>
-                          </button>
-                          <button class="btn p-0" data-bs-target="#modalToggle2" data-bs-toggle="modal" data-bs-dismiss="modal">
-                            <i class="fa fa-trash"></i>
-                          </button>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
 
           <!-- Remove sponsor confirmation modal 2 -->
-          <div class="modal fade" id="modalToggle2" aria-hidden="true" aria-labelledby="modalToggleLabel2" tabindex="-1">
+          <div class="modal fade" id="modaldelete" aria-hidden="true" aria-labelledby="modalToggleLabel2" tabindex="-1">
             <div class="modal-dialog modal-dialog-centered">
               <div class="modal-content">
                 <div class="modal-header">
@@ -778,24 +761,7 @@
             </div>
           </div>
 
-          <!-- Edit modal 3 -->
-          <div class="modal fade" id="modalToggle3" aria-hidden="true" aria-labelledby="modalToggleLabel3" tabindex="-1">
-            <div class="modal-dialog modal-dialog-centered">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="modalToggleLabel3">Edit Sponsor</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    no Ui for it 
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">No, Cancel</button>
-                  <button class="btn btn-primary" data-bs-target="#sponsor_Detials" data-bs-toggle="modal" data-bs-dismiss="modal">Back to first</button>
-                </div>
-              </div>
-            </div>
-          </div>
+
           <!-- end of sponsor_Detials -->
           </div>
           <!-- / Content -->

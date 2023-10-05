@@ -585,7 +585,7 @@
         </p>
       </div>
           <button class="btn btn-outline-primary template-customizer-open-btn" 
-          data-bs-toggle="modal" data-bs-target="#filterModal">filter</button>
+          data-bs-toggle="offcanvas" data-bs-target="#filterModal">filter</button>
     </div>
     <table class="dt-scrollableTable table users-table">
       <thead>
@@ -749,16 +749,65 @@
 
 
    <!-- filter modal -->
-   <div class="modal filterModal modal-top fade" id="filterModal" tabindex="-1">
-    <div class="modal-dialog">
-      <form class="modal-content">
-        <div class="modal-header pb-3">
-          <h5 class="modal-title" id="filterModalTitle">Filter</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+  <div class=" offcanvas offcanvas-end" id="filterModal" aria-hidden="true">
+  <div class="offcanvas-header my-1 border-bottom border-light">
+    <h5 class="offcanvas-title">Filter</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body pt-0 flex-grow-1">
+    <form>
+      <div class="col-md border-bottom border-light pb-3">
+        <div class=" fw-semibold filter-head">Created date</div>
+        <div class="form-check mt-3">
+          <input name="default-radio-1" class="form-check-input" type="radio" value="" id="Default" />
+          <label class="form-check-label" for="Default">
+            Default
+          </label>
         </div>
-        <div class="modal-body">
-            <div class="col-md border-bottom border-light pb-3">
-            <div class=" fw-semibold filter-head">Created date</div>
+        <div class="form-check mt-3">
+          <input name="default-radio-1" class="form-check-input" type="radio" value="" id="New" />
+          <label class="form-check-label" for="New">
+            Date created ( New to Old)
+          </label>
+        </div>
+        <div class="form-check mt-3">
+          <input name="default-radio-1" class="form-check-input" type="radio" value="" id="Old" />
+          <label class="form-check-label" for="Old">
+            Date created ( Old to new)
+          </label>
+        </div>
+        <div class="form-check mt-3">
+          <input name="default-radio-1" class="form-check-input" type="radio" value="" id="Custom" />
+          <label class="form-check-label" for="Custom">
+            Custom
+          </label>
+          <input placeholder="Start date    I    End Date" type="text" id="bs-rangepicker-basic" class="form-control mt-3" />
+        </div>
+        </div>
+        <div class="col-md border-bottom border-light py-3">
+          <div class=" fw-semibold filter-head">Account status</div>
+          <div class="form-check mt-3">
+            <input name="default-radio-1" class="form-check-input" type="radio" value="" id="Default" />
+            <label class="form-check-label" for="Default">
+              Default
+            </label>
+          </div>
+          <div class="form-check mt-3">
+            <input name="default-radio-1" class="form-check-input" type="radio" value="" id="New" />
+            <label class="form-check-label" for="New">
+              Active account
+            </label>
+          </div>
+          <div class="form-check mt-3">
+            <input name="default-radio-1" class="form-check-input" type="radio" value="" id="Old" />
+            <label class="form-check-label" for="Old">
+              Suspended account
+            </label>
+          </div>
+          
+        </div>
+        <div class="col-md border-bottom border-light py-3">
+            <div class=" fw-semibold filter-head">Active status</div>
             <div class="form-check mt-3">
               <input name="default-radio-1" class="form-check-input" type="radio" value="" id="Default" />
               <label class="form-check-label" for="Default">
@@ -768,100 +817,51 @@
             <div class="form-check mt-3">
               <input name="default-radio-1" class="form-check-input" type="radio" value="" id="New" />
               <label class="form-check-label" for="New">
-                Date created ( New to Old)
+                Currently online
               </label>
             </div>
             <div class="form-check mt-3">
               <input name="default-radio-1" class="form-check-input" type="radio" value="" id="Old" />
               <label class="form-check-label" for="Old">
-                Date created ( Old to new)
+                Currently offline
               </label>
             </div>
-            <div class="form-check mt-3">
-              <input name="default-radio-1" class="form-check-input" type="radio" value="" id="Custom" />
-              <label class="form-check-label" for="Custom">
-                Custom
-              </label>
-              <input placeholder="Start date    I    End Date" type="text" id="bs-rangepicker-basic" class="form-control mt-3" />
-            </div>
-            </div>
-            <div class="col-md border-bottom border-light py-3">
-              <div class=" fw-semibold filter-head">Account status</div>
-              <div class="form-check mt-3">
-                <input name="default-radio-1" class="form-check-input" type="radio" value="" id="Default" />
-                <label class="form-check-label" for="Default">
-                  Default
-                </label>
+            
+        </div>
+        <div class="col-md pt-3">
+          <div class=" fw-semibold filter-head">Country</div>
+          <div class="input-group input-group-merge mb-2">
+            <span class="input-group-text" id="basic-addon-search31"><i class="ti ti-search"></i></span>
+            <input type="text" class="form-control" placeholder="Search country name..." aria-label="Search..." aria-describedby="basic-addon-search31" />
+          </div>
+              <div class="text-light fw-semibold filter-head">Suggested</div>
+              <div class="form-check form-check-primary mt-1">
+                <input class="form-check-input" type="checkbox" value="" id="customCheckPrimary"/>
+                <label class="form-check-label" for="customCheckPrimary">
+                  <img src="../../assets/img/avatars/Flag-1.png" alt=""> Primary</label>
               </div>
-              <div class="form-check mt-3">
-                <input name="default-radio-1" class="form-check-input" type="radio" value="" id="New" />
-                <label class="form-check-label" for="New">
-                  Active account
-                </label>
+              <div class="form-check form-check-primary mt-3">
+                <input class="form-check-input" type="checkbox" value="" id="customCheckPrimary"/>
+                <label class="form-check-label" for="customCheckPrimary">
+                  <img src="../../assets/img/avatars/Flag-1.png" alt=""> United Kingdom</label>
               </div>
-              <div class="form-check mt-3">
-                <input name="default-radio-1" class="form-check-input" type="radio" value="" id="Old" />
-                <label class="form-check-label" for="Old">
-                  Suspended account
-                </label>
+              <div class="form-check form-check-primary mt-3">
+                <input class="form-check-input" type="checkbox" value="" id="customCheckPrimary"/>
+                <label class="form-check-label" for="customCheckPrimary">
+                  <img src="../../assets/img/avatars/Flag-1.png" alt=""> Qatar</label>
+              </div>
+              <div class="form-check form-check-primary mt-3">
+                <input class="form-check-input" type="checkbox" value="" id="customCheckPrimary"/>
+                <label class="form-check-label" for="customCheckPrimary">
+                  <img src="../../assets/img/avatars/Flag-1.png" alt=""> Germany</label>
               </div>
               
-            </div>
-            <div class="col-md border-bottom border-light py-3">
-                <div class=" fw-semibold filter-head">Active status</div>
-                <div class="form-check mt-3">
-                  <input name="default-radio-1" class="form-check-input" type="radio" value="" id="Default" />
-                  <label class="form-check-label" for="Default">
-                    Default
-                  </label>
-                </div>
-                <div class="form-check mt-3">
-                  <input name="default-radio-1" class="form-check-input" type="radio" value="" id="New" />
-                  <label class="form-check-label" for="New">
-                    Currently online
-                  </label>
-                </div>
-                <div class="form-check mt-3">
-                  <input name="default-radio-1" class="form-check-input" type="radio" value="" id="Old" />
-                  <label class="form-check-label" for="Old">
-                    Currently offline
-                  </label>
-                </div>
-                
-            </div>
-            <div class="col-md pt-3">
-                  <div class="text-light fw-semibold filter-head">Suggested</div>
-                  <div class="form-check form-check-primary mt-3">
-                    <input class="form-check-input" type="checkbox" value="" id="customCheckPrimary"/>
-                    <label class="form-check-label" for="customCheckPrimary">
-                      <img src="../../assets/img/avatars/Flag-1.png" alt=""> Primary</label>
-                  </div>
-                  <div class="form-check form-check-primary mt-3">
-                    <input class="form-check-input" type="checkbox" value="" id="customCheckPrimary"/>
-                    <label class="form-check-label" for="customCheckPrimary">
-                      <img src="../../assets/img/avatars/Flag-1.png" alt=""> United Kingdom</label>
-                  </div>
-                  <div class="form-check form-check-primary mt-3">
-                    <input class="form-check-input" type="checkbox" value="" id="customCheckPrimary"/>
-                    <label class="form-check-label" for="customCheckPrimary">
-                      <img src="../../assets/img/avatars/Flag-1.png" alt=""> Qatar</label>
-                  </div>
-                  <div class="form-check form-check-primary mt-3">
-                    <input class="form-check-input" type="checkbox" value="" id="customCheckPrimary"/>
-                    <label class="form-check-label" for="customCheckPrimary">
-                      <img src="../../assets/img/avatars/Flag-1.png" alt=""> Germany</label>
-                  </div>
-                  
-            </div>
         </div>
-        <div class="modal-footer border-top border-light">
-          <button type="button" class="btn btn-label-secondary" >Reset Filter</button>
-          <button type="button" class="btn btn-primary">View Result</button>
-        </div>
-      </form>
-    </div>
+    </form>
   </div>
-          <!-- Modal -->
+</div>
+<!-- /filter modal -->
+          <!-- modalNotification -->
           <div class="modal fade" id="modalNotification" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
@@ -1042,7 +1042,7 @@
   <!-- Page JS -->
   <script src="../../assets/js/forms-pickers.js"></script>
   <script src="../../assets/js/custome.js"></script>
-
+  <script src="../../assets/js/offcanvas-send-invoice.js"></script>
 
   <!-- Page JS -->
   
