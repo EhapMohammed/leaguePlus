@@ -51,7 +51,7 @@
   <link rel="stylesheet" href="../../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
   <link rel="stylesheet" href="../../assets/vendor/libs/node-waves/node-waves.css" />
   <link rel="stylesheet" href="../../assets/vendor/libs/typeahead-js/typeahead.css" />
-
+  <link rel="stylesheet" href="../../assets/vendor/libs/apex-charts/apex-charts.css">
 
   <!-- Helpers -->
   <script src="../../assets/vendor/js/helpers.js"></script>
@@ -68,9 +68,7 @@
 <body>
 
   
-  <!-- Google Tag Manager (noscript) (Default ThemeSelection: GTM-5DDHKGP, PixInvent: GTM-5J3LMKC) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5J3LMKC" height="0" width="0" style="display: none; visibility: hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
+
   
   <!-- Layout wrapper -->
 <div class="layout-wrapper layout-content-navbar  ">
@@ -565,6 +563,7 @@
             
               <!-- Statistics -->
 <div class="row">
+
   <!-- Total User -->
   <div class="col-lg-3 col-6 mb-4">
     <div class="card h-100">
@@ -814,18 +813,93 @@
 <!--/ Scrollable -->
 
 <div class="row">
+
+<!-- User Registration -->
+<div class="col-xl-4 col-md-6">
+  <div class="card">
+    <div class="card-body px-3 py-2 d-flex justify-content-between">
+      <div class="d-flex flex-column w-100">
+        <div class="card-title p-2 mb-auto d-flex justify-content-between align-items-center border-bottom border-light">
+          <h5 class="mb-0 text-nowrap">User Registration</h5>
+          <div class="btn-group">
+        <button type="button" class="btn border border-light dropdown-toggle d-flex align-items-center gap-3" data-bs-toggle="dropdown" aria-expanded="false">weekly</button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="javascript:void(0);">weekly</a></li>
+          <li><a class="dropdown-item" href="javascript:void(0);">monthly</a></li>
+          <li><a class="dropdown-item" href="javascript:void(0);">yearly</a></li>
+
+        </ul>
+      </div>
+        </div>
+        <div class="chart-statistics d-flex flex-column justify-content-center align-items-center">
+          <div id="generatedLeadsChart"></div>
+          <div class="d-flex align-items-center justify-content-around w-75">
+            <p><i class="fa-solid fa-circle text-primary me-1"></i> Email</p>
+            <p><i class="fa-solid fa-circle text-warning me-1"></i> Gmail</p>
+            <p><i class="fa-solid fa-circle text-success me-1"></i> Apple</p>
+
+          </div>
+
+          <!-- <h3 class="card-title mb-1">440</h3>
+          <small class="text-success text-nowrap fw-semibold"> 15.8%</small>
+          <small>Apple ID</small> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
     <!-- Active Projects -->
     <div class="col-xl-4 col-md-6 mb-4">
       <div class="card h-100">
         <div class="card-header border-bottom border-light py-2">
-          <div class="card-title mb-0">
-            <h5 class="mb-0">Active Project</h5>
+          <div class="card-title p-2 mb-0">
+            <h5 class="mb-0">Top Registered Country</h5>
           </div>
          
         </div>
         <div class="card-body py-2">
           <ul class="p-0 m-0">
-            <li class="mb-4 d-flex justify-content-between">
+            <li class="mb-2 d-flex justify-content-between align-items-center">
+              <div class="d-flex w-50 align-items-center">
+                <img src="../../assets/vendor/fonts/flags/1x1/us.svg" alt="us-logo" class="rounded-circle me-3" width="35" />
+                <div>
+                  <h6 class="mb-0">USA</h6>
+                  <small class="text-muted">22 active</small>
+                </div>
+              </div>
+                <span class="text-muted">5,500</span>
+            </li>
+            
+          </ul>
+          <ul class="p-0 m-0">
+            <li class="mb-2 d-flex justify-content-between align-items-center">
+              <div class="d-flex w-50 align-items-center">
+                <img src="../../assets/vendor/fonts/flags/1x1/us.svg" alt="us-logo" class="rounded-circle me-3" width="35" />
+                <div>
+                  <h6 class="mb-0">USA</h6>
+                  <small class="text-muted">22 active</small>
+                </div>
+              </div>
+                <span class="text-muted">5,500</span>
+            </li>
+            
+          </ul>
+          <ul class="p-0 m-0">
+            <li class="mb-2 d-flex justify-content-between align-items-center">
+              <div class="d-flex w-50 align-items-center">
+                <img src="../../assets/vendor/fonts/flags/1x1/us.svg" alt="us-logo" class="rounded-circle me-3" width="35" />
+                <div>
+                  <h6 class="mb-0">USA</h6>
+                  <small class="text-muted">22 active</small>
+                </div>
+              </div>
+                <span class="text-muted">5,500</span>
+            </li>
+            
+          </ul>
+          <ul class="p-0 m-0">
+            <li class="mb-2 d-flex justify-content-between align-items-center">
               <div class="d-flex w-50 align-items-center">
                 <img src="../../assets/vendor/fonts/flags/1x1/us.svg" alt="us-logo" class="rounded-circle me-3" width="35" />
                 <div>
@@ -840,11 +914,43 @@
         </div>
       </div>
     </div>
+
+    <!-- Device Source -->
+<div class="col-xl-4 col-md-6">
+  <div class="card">
+    <div class="card-body px-3 py-2 d-flex justify-content-between">
+      <div class="d-flex flex-column w-100">
+        <div class="card-title p-2 mb-auto d-flex justify-content-between align-items-center border-bottom border-light">
+          <h5 class="mb-0 text-nowrap">Device Source</h5>
+          <div class="btn-group">
+        <button type="button" class="btn border border-light dropdown-toggle d-flex align-items-center gap-3" data-bs-toggle="dropdown" aria-expanded="false">weekly</button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="javascript:void(0);">weekly</a></li>
+          <li><a class="dropdown-item" href="javascript:void(0);">monthly</a></li>
+          <li><a class="dropdown-item" href="javascript:void(0);">yearly</a></li>
+
+        </ul>
+      </div>
+        </div>
+        <div class="chart-statistics d-flex flex-column justify-content-center align-items-center">
+          <div id="generatedLeadsChart2"></div>
+          <div class="d-flex align-items-center justify-content-around w-75">
+            <p><i class="fa-solid fa-circle text-success me-1"></i> IOS</p>
+            <p><i class="fa-solid fa-circle text-primary me-1"></i> Android</p>
+
+          </div>
+
+        
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
     <!--/ Active Projects -->
 </div>
 
    
-          <!-- Modal -->
+          <!-- Modal send notification -->
           <div class="modal fade" id="modalCenter" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
@@ -869,7 +975,7 @@
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
+                  <button type="button" class="btn btn-primary">send Notification</button>
                 </div>
               </div>
             </div>
@@ -915,7 +1021,7 @@
   <script src="../../assets/vendor/libs/hammer/hammer.js"></script>
   <script src="../../assets/vendor/libs/i18n/i18n.js"></script>
   <script src="../../assets/vendor/libs/typeahead-js/typeahead.js"></script>
-  
+  <script src="../../assets/vendor/libs/apex-charts/apexcharts.js"></script>
   <script src="../../assets/vendor/js/menu.js"></script>
   <!-- endbuild -->
 
@@ -927,7 +1033,8 @@
   <script src="../../assets/js/main.js"></script>
 
   <!-- Page JS -->
-  
+  <script src="../../assets/js/cards-statistics.js"></script>
+
   
    
 </body>
