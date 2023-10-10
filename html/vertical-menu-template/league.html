@@ -649,6 +649,7 @@
   </div>
 </div>
 <!--/ Scrollable -->
+
 <!-- add league modal 1 -->
 <div class="modal fade" id="add_league" aria-hidden="true" aria-labelledby="add_league_Label" tabindex="-1">
   <div class="modal-dialog modal-dialog-centered">
@@ -660,9 +661,64 @@
       <div class="modal-body ">
         <div class="mb-3">
           <label for="html5-url-input" class="col-md-2 col-form-label">API URL</label>
-          <div class="col-12">
+          <div class="col-12 input-group input-group-merge">
             <input class="form-control" type="url"  id="html5-url-input" />
+            <span class="input-group-text "><i class="ti ti-pencil"></i></span>
           </div>
+        </div>
+
+        <div class="divider my-3">
+          <div class="divider-text">Sponsor Inforamtion</div>
+        </div>
+        <div>
+          <div class="d-flex justify-content-between align-items-center mb-2"> 
+            <div class="form-group col-8">
+              <label class="form-label fw-bold text-dark" for="sponsName">Sponsor name</label>
+              <div class="input-group input-group-merge">
+                <input type="password" class="  form-control" id="sponsName" placeholder="Type sponsor name" >
+                <span class="input-group-text "><i class="ti ti-pencil"></i></span>
+              </div>
+            </div>
+
+            <div class="position-relative bg-light rounded-circle">
+              <img src="../../assets/img/avatars/Last.fm-Logo.wine.png" alt="user-avatar" class="d-block w-px-100 h-px-100 rounded-circle" id="uploadedAvatar" />
+              <div class="button-wrapper rounded-circle border position-absolute img-btn-div">
+                <label for="upload" class="btn " tabindex="0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M5.87364 3.36736L4.8366 4.4044H2.85149V10.6266H11.1478V4.4044H9.16269L8.12565 3.36736H5.87364ZM5.44408 2.33032H8.55519L9.59223 3.36736H11.6663C11.9527 3.36736 12.1848 3.59951 12.1848 3.88588V11.1451C12.1848 11.4315 11.9527 11.6637 11.6663 11.6637H2.33297C2.0466 11.6637 1.81445 11.4315 1.81445 11.1451V3.88588C1.81445 3.59951 2.0466 3.36736 2.33297 3.36736H4.40705L5.44408 2.33032ZM5.77615 4.67944C6.14693 4.50309 6.56175 4.4044 6.99964 4.4044C8.57469 4.4044 9.85149 5.68121 9.85149 7.25625C9.85149 8.05995 9.51902 8.78598 8.98416 9.30434L7.90705 7.3081H8.81373C8.81419 7.29089 8.81445 7.27357 8.81445 7.25625C8.81445 6.25395 8.00193 5.44143 6.99964 5.44143C6.73582 5.44143 6.48516 5.49772 6.25899 5.59895L5.77615 4.67944ZM8.2013 9.84334C7.83611 10.0132 7.42897 10.1081 6.99964 10.1081C5.4246 10.1081 4.14779 8.8313 4.14779 7.25625C4.14779 6.46177 4.47266 5.74318 4.9968 5.22605L6.09223 7.25625H5.18482C5.18482 8.25854 5.99734 9.07106 6.99964 9.07106C7.2549 9.07106 7.49783 9.01838 7.71815 8.92329L8.2013 9.84334Z" fill="#0C090F"/>
+                  </svg>
+                  <input type="file" id="upload" class="account-file-input" hidden accept="image/png, image/jpeg" />
+                </label>
+                </div>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between align-items-center mb-2"> 
+            <div class="form-group col-8">
+              <label class="form-label fw-bold text-dark" for="sponsName">Sponsor name</label>
+              <div class="input-group input-group-merge">
+                <input type="password" class="  form-control" id="sponsName" placeholder="Type sponsor name" >
+                <span class="input-group-text "><i class="ti ti-pencil"></i></span>
+              </div>
+            </div>
+
+            <div class="position-relative bg-light rounded-circle">
+              <div class="d-flex justify-content-center align-items-center w-px-100 h-px-100 rounded-circle">
+                <svg   xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M2.493 17.5C2.03655 17.5 1.6665 17.1292 1.6665 16.6722V3.32783C1.6665 2.87063 2.04593 2.5 2.493 2.5H17.5067C17.9632 2.5 18.3332 2.87079 18.3332 3.32783V16.6722C18.3332 17.1293 17.9538 17.5 17.5067 17.5H2.493ZM16.6665 12.5V4.16667H3.33317V15.8333L11.6665 7.5L16.6665 12.5ZM16.6665 14.857L11.6665 9.857L5.6902 15.8333H16.6665V14.857ZM6.6665 9.16667C5.74603 9.16667 4.99984 8.4205 4.99984 7.5C4.99984 6.57952 5.74603 5.83333 6.6665 5.83333C7.58698 5.83333 8.33317 6.57952 8.33317 7.5C8.33317 8.4205 7.58698 9.16667 6.6665 9.16667Z" fill="#E0DFE4"/>
+                </svg>
+              </div>
+                 <div class="button-wrapper rounded-circle border position-absolute img-btn-div">
+                <label for="upload" class="btn " tabindex="0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M5.87364 3.36736L4.8366 4.4044H2.85149V10.6266H11.1478V4.4044H9.16269L8.12565 3.36736H5.87364ZM5.44408 2.33032H8.55519L9.59223 3.36736H11.6663C11.9527 3.36736 12.1848 3.59951 12.1848 3.88588V11.1451C12.1848 11.4315 11.9527 11.6637 11.6663 11.6637H2.33297C2.0466 11.6637 1.81445 11.4315 1.81445 11.1451V3.88588C1.81445 3.59951 2.0466 3.36736 2.33297 3.36736H4.40705L5.44408 2.33032ZM5.77615 4.67944C6.14693 4.50309 6.56175 4.4044 6.99964 4.4044C8.57469 4.4044 9.85149 5.68121 9.85149 7.25625C9.85149 8.05995 9.51902 8.78598 8.98416 9.30434L7.90705 7.3081H8.81373C8.81419 7.29089 8.81445 7.27357 8.81445 7.25625C8.81445 6.25395 8.00193 5.44143 6.99964 5.44143C6.73582 5.44143 6.48516 5.49772 6.25899 5.59895L5.77615 4.67944ZM8.2013 9.84334C7.83611 10.0132 7.42897 10.1081 6.99964 10.1081C5.4246 10.1081 4.14779 8.8313 4.14779 7.25625C4.14779 6.46177 4.47266 5.74318 4.9968 5.22605L6.09223 7.25625H5.18482C5.18482 8.25854 5.99734 9.07106 6.99964 9.07106C7.2549 9.07106 7.49783 9.01838 7.71815 8.92329L8.2013 9.84334Z" fill="#0C090F"/>
+                  </svg>
+                  <input type="file" id="upload" class="account-file-input" hidden accept="image/png, image/jpeg" />
+                </label>
+                </div>
+            </div>
+          </div>
+
+          <p class="cursor-pointer text-primary">Add More +</p>
         </div>
       </div>
       <div class="modal-footer">

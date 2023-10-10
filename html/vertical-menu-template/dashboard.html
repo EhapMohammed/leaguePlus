@@ -716,9 +716,9 @@
             <div class="dropdown text-center">
               <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="ti ti-dots-vertical"></i></button>
               <div class="dropdown-menu">
-                <a class="dropdown-item d-flex align-items-center" href="javascript:void(0);"  data-bs-toggle="modal" data-bs-target="#modalCenter"><i class="fa-regular fa-paper-plane me-2"></i> Send notification</a>
-                <a class="dropdown-item d-flex align-items-center" href="javascript:void(0);"><i class="fa-solid fa-ban me-2"></i> Suspend user</a>
-                <a class="dropdown-item d-flex align-items-center" href="javascript:void(0);"><i class="ti ti-trash me-2"></i> Delete account</a>
+                <a class="dropdown-item d-flex align-items-center" href="javascript:void(0);"  data-bs-toggle="modal" data-bs-target="#modalNotification"><i class="fa-regular fa-paper-plane me-2"></i> Send notification</a>
+                <a class="dropdown-item d-flex align-items-center" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#deletUserModal"><i class="fa-solid fa-ban me-2"></i> Suspend user</a>
+                <a class="dropdown-item d-flex align-items-center" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#deletUserModal"><i class="ti ti-trash me-2"></i> Delete account</a>
               </div>
             </div>
           </td>
@@ -950,12 +950,12 @@
 </div>
 
    
-          <!-- Modal send notification -->
-          <div class="modal fade" id="modalCenter" tabindex="-1" aria-hidden="true">
+          <!-- modalNotification -->
+          <div class="modal fade" id="modalNotification" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="modalCenterTitle">Create notification</h5>
+                  <h5 class="modal-title" id="modalNotificationTitle">Create notification</h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -975,11 +975,131 @@
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">send Notification</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
                 </div>
               </div>
             </div>
           </div>
+
+          <!-- Modal deletUserModal-->
+          <div class="modal fade" id="deletUserModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header border-0">
+                  <!--<h5 class="modal-title" id="modalNotificationTitle">Create notification</h5> --> 
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                 <div class="d-flex align-items-center gap-2 ">
+                  <button
+                   class="p-2 btn btn-primary"><i class="fa-solid fa-ban"></i></button>
+                  <button class="p-2 btn btn-danger" data-bs-target="#confirmDelete" data-bs-toggle="modal" data-bs-dismiss="modal"><i class="ti ti-trash "></i></button>
+                 </div>
+                </div> 
+                <div class="modal-body py-0">
+                  <div class="card mb-4" style="box-shadow: none !important;border: unset !important;">
+                    <div class="card-body py-0 border-0">
+                      <div class="user-avatar-section">
+                        <div class=" d-flex align-items-center flex-column">
+                          <img src="../../assets/img/avatars/14.png" alt="user-avatar" class="d-block w-px-100 h-px-100 rounded-circle" id="uploadedAvatar" />
+                          <div class="user-info text-center">
+                            <h4 class="mb-2">Violet Mendoza</h4>
+                            <span class="badge bg-label-primary p-2 mt-1">Joined: 23 Jun, 2023</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="d-flex flex-column mt-3 pt-3 ">
+                        <div class="d-flex align-items-center justify-content-between border-bottom border-light me-4 pb-3 mt-3 ">
+                            <p class="mb-0 fw-semibold">User name</p>
+                            <small>Danial Donald</small>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between border-bottom border-light me-4 pb-3 mt-3 ">
+                          <p class="mb-0 fw-semibold">User ID</p>
+                          <small>danial2</small>
+                      </div>
+                      <div class="d-flex align-items-center justify-content-between border-bottom border-light me-4 pb-3 mt-3 ">
+                        <p class="mb-0 fw-semibold">Email address</p>
+                        <small>danialdoe@gmail.com</small>
+                      </div>
+                      <div class="d-flex align-items-center justify-content-between border-bottom border-light me-4 pb-3 mt-3 ">
+                        <p class="mb-0 fw-semibold">Country</p>
+                        <small><img src="../../assets/img/avatars/Flag-1.png" alt=""> Qatar</small>
+                      </div>
+                      <div class=" mt-3 gap-2">
+                        <p class="mb-3 fw-semibold">Bio</p>
+                        <p>I am a passionate football enthusiast and an avid user of the football prediction mobile app.
+                           With a deep love for the sport, 
+                          she enjoys engaging with the app's features to stay connected with the world of football. </p>
+                      </div>
+
+                        
+                      </div>
+                      <div class="rounded mt-3 p-2 justify-content-around align-items-center mx-auto d-flex bg-label-light">
+                        <div class="d-flex flex-column align-items-center justify-content-center gap-1">
+                          <div><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M10.8379 14.1183V15.8365H15.0046V17.5032H5.00456V15.8365H9.17124V14.1183C5.88263 13.7082 3.33789 10.9029 3.33789 7.50323V2.50323H16.6712V7.50323C16.6712 10.9029 14.1265 13.7082 10.8379 14.1183ZM0.837891 4.1699H2.50456V7.50323H0.837891V4.1699ZM17.5046 4.1699H19.1712V7.50323H17.5046V4.1699Z" fill="#6149AF"/>
+                          </svg></div>
+                          <p class="text-light">League</p>
+                          <small>1</small>
+                        </div>
+                        <div class="d-flex flex-column align-items-center justify-content-center gap-1">
+                          <div><svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none">
+                            <path d="M3.50033 2.5H16.8337C17.2939 2.5 17.667 2.8731 17.667 3.33333V16.6667C17.667 17.1269 17.2939 17.5 16.8337 17.5H3.50033C3.04009 17.5 2.66699 17.1269 2.66699 16.6667V3.33333C2.66699 2.8731 3.04009 2.5 3.50033 2.5ZM9.33366 10.66V13.3333H11.0003V10.66C11.7362 10.3385 12.2503 9.60433 12.2503 8.75C12.2503 7.59941 11.3176 6.66667 10.167 6.66667C9.01641 6.66667 8.08366 7.59941 8.08366 8.75C8.08366 9.60433 8.59783 10.3385 9.33366 10.66Z" fill="#AD8939"/>
+                          </svg></div>
+                          <p class="text-light">Private League</p>
+                          <small>2</small>
+                        </div>
+                        <div class="d-flex flex-column align-items-center justify-content-center gap-1">
+                          <div><svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none">
+                            <path d="M3.66634 2.5H16.9997C17.4599 2.5 17.833 2.8731 17.833 3.33333V16.6667C17.833 17.1269 17.4599 17.5 16.9997 17.5H3.66634C3.20611 17.5 2.83301 17.1269 2.83301 16.6667V3.33333C2.83301 2.8731 3.20611 2.5 3.66634 2.5ZM9.49967 10.66V13.3333H11.1663V10.66C11.9022 10.3385 12.4163 9.60433 12.4163 8.75C12.4163 7.59941 11.4836 6.66667 10.333 6.66667C9.18242 6.66667 8.24967 7.59941 8.24967 8.75C8.24967 9.60433 8.76384 10.3385 9.49967 10.66Z" fill="#7CBD70"/>
+                          </svg></div>
+                          <p class="text-light">Private cup</p>
+                          <small>3</small>
+                        </div>
+                        <div class="d-flex flex-column align-items-center justify-content-center gap-1">
+                          <div><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M1.66634 7.49997H4.16634V17.5H1.66634C1.20611 17.5 0.833008 17.1269 0.833008 16.6667V8.33331C0.833008 7.87307 1.20611 7.49997 1.66634 7.49997ZM6.07708 6.42257L11.4108 1.08884C11.5574 0.942216 11.7896 0.925724 11.9554 1.05013L12.6659 1.583C13.0698 1.88593 13.2518 2.40211 13.1273 2.89138L12.1662 6.66664H17.4997C18.4202 6.66664 19.1663 7.41283 19.1663 8.33331V10.0869C19.1663 10.3047 19.1237 10.5202 19.0408 10.7215L16.4622 16.9839C16.3336 17.2962 16.0293 17.5 15.6916 17.5H6.66634C6.20611 17.5 5.83301 17.1269 5.83301 16.6667V7.01182C5.83301 6.79081 5.92081 6.57885 6.07708 6.42257Z" fill="#FFB408"/>
+                          </svg></div>
+                          <p class="text-light">Likes</p>
+                          <small>5</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--  <div class="modal-footer py-2 bg-label-primary">
+                  
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button> 
+
+                </div>-->
+              </div>
+            </div>
+          </div>
+
+          <!-- Remove user confirmation modal 2 -->
+          <div class="modal fade" id="confirmDelete" aria-hidden="true" aria-labelledby="modalToggleLabel2" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body d-flex align-items-center flex-column ">
+                  <div class="modal-remove-icon-div rounded-circle mb-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44" fill="none">
+                      <path d="M7.33341 14.6666H36.6667V38.5C36.6667 39.5125 35.846 40.3333 34.8334 40.3333H9.16675C8.15423 40.3333 7.33341 39.5125 7.33341 38.5V14.6666ZM12.8334 9.16663V5.49996C12.8334 4.48745 13.6542 3.66663 14.6667 3.66663H29.3334C30.346 3.66663 31.1667 4.48745 31.1667 5.49996V9.16663H40.3334V12.8333H3.66675V9.16663H12.8334ZM16.5001 7.33329V9.16663H27.5001V7.33329H16.5001ZM16.5001 22V33H20.1667V22H16.5001ZM23.8334 22V33H27.5001V22H23.8334Z" fill="#D91218"/>
+                    </svg>
+                  </div>
+                  <p class="fw-bold">Are you sure want to delete this User?</p>
+                  <p class="text-muted">Once you send it can not be undone. </p>
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                  <button type="button" class="btn btn-label-secondary" data-bs-target="#deletUserModal" data-bs-toggle="modal" data-bs-dismiss="modal">No, Cancel</button>
+                  <button class="btn btn-primary"  data-bs-dismiss="modal">Yes, Delete</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
           </div>
           <!-- / Content -->
 
