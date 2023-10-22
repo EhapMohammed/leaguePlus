@@ -572,8 +572,15 @@
           <span class="input-group-text" id="basic-addon-search31"><i class="ti ti-search"></i></span>
           <input type="text" class="form-control" placeholder="Search Ads..." aria-label="Search..." aria-describedby="basic-addon-search31" />
         </div>
-        <button class="btn btn-primary overflow-visible" data-bs-toggle="modal" data-bs-target="#add_league">
-          <i class="fa fa-plus me-2"></i>Add New Ad</button>
+        <div class="btn-group">
+          <button type="button" class="btn btn-primary dropdown-toggle waves-effect waves-light" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa fa-plus me-2"></i> Add New Ad</button>
+          <ul class="dropdown-menu" >
+            <li><a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#add_ad">one</a></li>
+            <li><a class="dropdown-item" href="javascript:void(0);">two</a></li>
+            <li><a class="dropdown-item" href="javascript:void(0);">three</a></li>
+          </ul>
+        </div>
       </div>
     </div>
     <table class="dt-scrollableTable table">
@@ -606,7 +613,7 @@
           <div class="dropdown text-center">
             <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="ti ti-dots-vertical"></i></button>
             <div class="dropdown-menu">
-              <a class="dropdown-item d-flex align-items-center" href="javascript:void(0);"  data-bs-toggle="modal" data-bs-target="#modalNotification"><i class="fa fa-pen me-2"></i> Edit Details</a>
+              <a class="dropdown-item d-flex align-items-center" href="javascript:void(0);"  data-bs-toggle="modal" data-bs-target="#editModal"><i class="fa fa-pen me-2"></i> Edit Details</a>
               <a class="dropdown-item d-flex align-items-center" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#deletUserModal"><i class="fa-solid fa-ban me-2"></i> Deactivate Ad</a>
               <a class="dropdown-item d-flex align-items-center" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#deletUserModal"><i class="ti ti-trash me-2"></i> Delete Ad</a>
             </div>
@@ -628,7 +635,7 @@
           <div class="dropdown text-center">
             <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="ti ti-dots-vertical"></i></button>
             <div class="dropdown-menu">
-              <a class="dropdown-item d-flex align-items-center" href="javascript:void(0);"  data-bs-toggle="modal" data-bs-target="#modalNotification"><i class="fa fa-pen me-2"></i> Edit Details</a>
+              <a class="dropdown-item d-flex align-items-center" href="javascript:void(0);"  data-bs-toggle="modal" data-bs-target="#editModal"><i class="fa fa-pen me-2"></i> Edit Details</a>
               <a class="dropdown-item d-flex align-items-center" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#deletUserModal"><i class="fa-solid fa-circle me-2"></i> activate Ad</a>
               <a class="dropdown-item d-flex align-items-center" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#deletUserModal"><i class="ti ti-trash me-2"></i> Delete Ad</a>
             </div>
@@ -672,75 +679,75 @@
 </div>
 <!--/ Scrollable -->
 
-<!-- add league modal 1 -->
-<div class="modal fade" id="add_league" aria-hidden="true" aria-labelledby="add_league_Label" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="add_league_Label">Add Advertisement</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body ">
-        <div class="">
-          <label class="form-label fw-bold text-dark" for="sponslogo">Sponsor logo</label>
-          <div class="position-relative bg-light rounded-circle">
-            <img src="../../assets/img/avatars/Last.fm-Logo.wine.png" alt="user-avatar" class="d-block w-px-100 h-px-100 rounded-circle" id="uploadedAvatar" />
-            <div class="button-wrapper rounded-circle border position-absolute img-btn-div">
-              <label for="upload" class="btn btn-primary" tabindex="0">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
-                  <path d="M5.87364 3.36736L4.8366 4.4044H2.85149V10.6266H11.1478V4.4044H9.16269L8.12565 3.36736H5.87364ZM5.44408 2.33032H8.55519L9.59223 3.36736H11.6663C11.9527 3.36736 12.1848 3.59951 12.1848 3.88588V11.1451C12.1848 11.4315 11.9527 11.6637 11.6663 11.6637H2.33297C2.0466 11.6637 1.81445 11.4315 1.81445 11.1451V3.88588C1.81445 3.59951 2.0466 3.36736 2.33297 3.36736H4.40705L5.44408 2.33032ZM5.77615 4.67944C6.14693 4.50309 6.56175 4.4044 6.99964 4.4044C8.57469 4.4044 9.85149 5.68121 9.85149 7.25625C9.85149 8.05995 9.51902 8.78598 8.98416 9.30434L7.90705 7.3081H8.81373C8.81419 7.29089 8.81445 7.27357 8.81445 7.25625C8.81445 6.25395 8.00193 5.44143 6.99964 5.44143C6.73582 5.44143 6.48516 5.49772 6.25899 5.59895L5.77615 4.67944ZM8.2013 9.84334C7.83611 10.0132 7.42897 10.1081 6.99964 10.1081C5.4246 10.1081 4.14779 8.8313 4.14779 7.25625C4.14779 6.46177 4.47266 5.74318 4.9968 5.22605L6.09223 7.25625H5.18482C5.18482 8.25854 5.99734 9.07106 6.99964 9.07106C7.2549 9.07106 7.49783 9.01838 7.71815 8.92329L8.2013 9.84334Z" fill="#0C090F"/>
-                </svg>
-                <input type="file" id="upload" class="account-file-input" hidden accept="image/png, image/jpeg" />
-              </label>
-              </div>
-          </div>
-        </div>
-        <div class="form-group mt-2 mb-3">
-          <label class="form-label fw-bold text-dark" for="sponsName">Sponsor name</label>
-          <div class="input-group input-group-merge">
-            <input type="text" class="  form-control" id="sponsName" placeholder="Type sponsor name" >
-          </div>
-        </div>
-        <div class="form-group mb-3">
-          <label for="exampleFormControlSelect1" class="form-label">Add Type</label>
-          <select class="form-select" id="exampleFormControlSelect1" aria-label="Default select example">
-            <option selected="">select add type</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-          </select>
-        </div>
+          <!-- add league modal 1 -->
+          <div class="modal fade" id="add_ad" aria-hidden="true" aria-labelledby="add_ad_Label" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="add_ad_Label">Add Advertisement</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body ">
+                  <div class="">
+                    <label class="form-label fw-bold text-dark" for="sponslogo">Sponsor logo</label>
+                    <div class="position-relative bg-light rounded-circle">
+                      <img src="../../assets/img/avatars/Last.fm-Logo.wine.png" alt="user-avatar" class="d-block w-px-100 h-px-100 rounded-circle" id="uploadedAvatar" />
+                      <div class="button-wrapper rounded-circle border position-absolute img-btn-div">
+                        <label for="upload" class="btn btn-primary" tabindex="0">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                            <path d="M5.87364 3.36736L4.8366 4.4044H2.85149V10.6266H11.1478V4.4044H9.16269L8.12565 3.36736H5.87364ZM5.44408 2.33032H8.55519L9.59223 3.36736H11.6663C11.9527 3.36736 12.1848 3.59951 12.1848 3.88588V11.1451C12.1848 11.4315 11.9527 11.6637 11.6663 11.6637H2.33297C2.0466 11.6637 1.81445 11.4315 1.81445 11.1451V3.88588C1.81445 3.59951 2.0466 3.36736 2.33297 3.36736H4.40705L5.44408 2.33032ZM5.77615 4.67944C6.14693 4.50309 6.56175 4.4044 6.99964 4.4044C8.57469 4.4044 9.85149 5.68121 9.85149 7.25625C9.85149 8.05995 9.51902 8.78598 8.98416 9.30434L7.90705 7.3081H8.81373C8.81419 7.29089 8.81445 7.27357 8.81445 7.25625C8.81445 6.25395 8.00193 5.44143 6.99964 5.44143C6.73582 5.44143 6.48516 5.49772 6.25899 5.59895L5.77615 4.67944ZM8.2013 9.84334C7.83611 10.0132 7.42897 10.1081 6.99964 10.1081C5.4246 10.1081 4.14779 8.8313 4.14779 7.25625C4.14779 6.46177 4.47266 5.74318 4.9968 5.22605L6.09223 7.25625H5.18482C5.18482 8.25854 5.99734 9.07106 6.99964 9.07106C7.2549 9.07106 7.49783 9.01838 7.71815 8.92329L8.2013 9.84334Z" fill="#0C090F"/>
+                          </svg>
+                          <input type="file" id="upload" class="account-file-input" hidden accept="image/png, image/jpeg" />
+                        </label>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="form-group mt-2 mb-3">
+                    <label class="form-label fw-bold text-dark" for="sponsName">Sponsor name</label>
+                    <div class="input-group input-group-merge">
+                      <input type="text" class="  form-control" id="sponsName" placeholder="Type sponsor name" >
+                    </div>
+                  </div>
+                  <div class="form-group mb-3">
+                    <label for="exampleFormControlSelect1" class="form-label">Add Type</label>
+                    <select class="form-select" id="exampleFormControlSelect1" aria-label="Default select example">
+                      <option selected="">select add type</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </select>
+                  </div>
 
-        
-        <div class="form-group mb-3">
-          <label class="form-label fw-bold text-dark" for="sponsName">Redirect link  </label>
-          <div class="input-group input-group-merge">
-            <input type="text" class="  form-control" id="sponsName" placeholder="Type sponsor name" >
-            <span class="input-group-text ">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path d="M5.19587 5.37782C4.04247 6.57631 3.33329 8.20538 3.33329 10.0001C3.33329 13.682 6.31806 16.6667 9.99996 16.6667C10.9006 16.6667 11.7596 16.4882 12.5434 16.1644C12.6392 15.539 12.429 14.9389 12.343 14.7289C12.1516 14.2626 11.52 13.4652 10.4657 12.3591C10.1843 12.0632 10.2024 11.8363 10.303 11.162L10.3145 11.0858C10.3829 10.6239 10.4975 10.3508 12.0518 10.1041C12.8414 9.97892 13.049 10.2945 13.3369 10.7315C13.3687 10.7799 13.4005 10.8274 13.4331 10.875C13.7065 11.2748 13.9091 11.3662 14.2151 11.5054C14.3522 11.5676 14.5233 11.646 14.7525 11.7762C15.2959 12.0867 15.2959 12.4373 15.2959 13.2061V13.2932C15.2959 13.6196 15.264 13.9061 15.2138 14.155C16.1231 13.0155 16.6666 11.5712 16.6666 10.0001C16.6666 7.25082 15.0025 4.89025 12.6265 3.87076C12.1655 4.18186 11.5331 4.6228 11.3125 4.92508C11.1996 5.07956 11.0401 5.86813 10.5214 5.93322C10.3855 5.95027 10.2031 5.93832 10.01 5.92589C9.49204 5.89223 8.78346 5.8468 8.55663 6.46254C8.41263 6.85275 8.38729 7.91212 8.85321 8.462C8.92779 8.54983 8.94221 8.71233 8.89154 8.89467C8.82496 9.13408 8.69046 9.27975 8.64854 9.30983C8.56821 9.26366 8.40796 9.07767 8.29944 8.95108C8.03791 8.64717 7.71167 8.26869 7.28993 8.15155C7.13658 8.10911 6.96801 8.07397 6.80453 8.03955C6.34696 7.94364 5.82865 7.83453 5.70823 7.5776C5.62031 7.38942 5.62069 7.13026 5.62103 6.85645C5.62103 6.50942 5.62103 6.11699 5.45103 5.73555C5.38534 5.58792 5.29737 5.47046 5.19587 5.37782ZM9.99996 18.3334C5.39758 18.3334 1.66663 14.6024 1.66663 10.0001C1.66663 5.39771 5.39758 1.66675 9.99996 1.66675C14.6023 1.66675 18.3333 5.39771 18.3333 10.0001C18.3333 14.6024 14.6023 18.3334 9.99996 18.3334Z" fill="#87878A"/>
-              </svg>
-            </span>
+                  
+                  <div class="form-group mb-3">
+                    <label class="form-label fw-bold text-dark" for="sponsName">Redirect link  </label>
+                    <div class="input-group input-group-merge">
+                      <input type="text" class="  form-control" id="sponsName" placeholder="Type sponsor name" >
+                      <span class="input-group-text ">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                          <path d="M5.19587 5.37782C4.04247 6.57631 3.33329 8.20538 3.33329 10.0001C3.33329 13.682 6.31806 16.6667 9.99996 16.6667C10.9006 16.6667 11.7596 16.4882 12.5434 16.1644C12.6392 15.539 12.429 14.9389 12.343 14.7289C12.1516 14.2626 11.52 13.4652 10.4657 12.3591C10.1843 12.0632 10.2024 11.8363 10.303 11.162L10.3145 11.0858C10.3829 10.6239 10.4975 10.3508 12.0518 10.1041C12.8414 9.97892 13.049 10.2945 13.3369 10.7315C13.3687 10.7799 13.4005 10.8274 13.4331 10.875C13.7065 11.2748 13.9091 11.3662 14.2151 11.5054C14.3522 11.5676 14.5233 11.646 14.7525 11.7762C15.2959 12.0867 15.2959 12.4373 15.2959 13.2061V13.2932C15.2959 13.6196 15.264 13.9061 15.2138 14.155C16.1231 13.0155 16.6666 11.5712 16.6666 10.0001C16.6666 7.25082 15.0025 4.89025 12.6265 3.87076C12.1655 4.18186 11.5331 4.6228 11.3125 4.92508C11.1996 5.07956 11.0401 5.86813 10.5214 5.93322C10.3855 5.95027 10.2031 5.93832 10.01 5.92589C9.49204 5.89223 8.78346 5.8468 8.55663 6.46254C8.41263 6.85275 8.38729 7.91212 8.85321 8.462C8.92779 8.54983 8.94221 8.71233 8.89154 8.89467C8.82496 9.13408 8.69046 9.27975 8.64854 9.30983C8.56821 9.26366 8.40796 9.07767 8.29944 8.95108C8.03791 8.64717 7.71167 8.26869 7.28993 8.15155C7.13658 8.10911 6.96801 8.07397 6.80453 8.03955C6.34696 7.94364 5.82865 7.83453 5.70823 7.5776C5.62031 7.38942 5.62069 7.13026 5.62103 6.85645C5.62103 6.50942 5.62103 6.11699 5.45103 5.73555C5.38534 5.58792 5.29737 5.47046 5.19587 5.37782ZM9.99996 18.3334C5.39758 18.3334 1.66663 14.6024 1.66663 10.0001C1.66663 5.39771 5.39758 1.66675 9.99996 1.66675C14.6023 1.66675 18.3333 5.39771 18.3333 10.0001C18.3333 14.6024 14.6023 18.3334 9.99996 18.3334Z" fill="#87878A"/>
+                        </svg>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="form-group mb-3">
+                    <label for="exampleFormControlSelect2" class="form-label">Associated league</label>
+                    <select class="form-select" id="exampleFormControlSelect2" aria-label="Default select example">
+                      <option selected="">Select league for advertisement</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </select>
+                  </div>
+                  
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">Cancel</button>
+                  <button class="btn btn-primary"  data-bs-dismiss="modal">Add league</button>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="form-group mb-3">
-          <label for="exampleFormControlSelect2" class="form-label">Associated league</label>
-          <select class="form-select" id="exampleFormControlSelect2" aria-label="Default select example">
-            <option selected="">Select league for advertisement</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-          </select>
-        </div>
-        
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">Cancel</button>
-        <button class="btn btn-primary"  data-bs-dismiss="modal">Add league</button>
-      </div>
-    </div>
-  </div>
-</div>
           <!-- Remove league confirmation modal 2 -->
           <div class="modal fade" id="delete_league" aria-hidden="true" aria-labelledby="delete_league_Label" tabindex="-1">
             <div class="modal-dialog modal-dialog-centered">
@@ -788,7 +795,7 @@
                         <td><img src="../../assets/img/avatars/Last.fm-Logo.wine.png" alt=""></td>
                         <td>Lost.FM internetional</td>
                         <td>
-                          <button class="btn p-0" data-bs-target="#modalToggle3" data-bs-toggle="modal" data-bs-dismiss="modal">
+                          <button class="btn p-0" data-bs-target="#editModal" data-bs-toggle="modal" data-bs-dismiss="modal">
                           <i class="fa fa-pen me-3"></i>
                           </button>
                           <button class="btn p-0" data-bs-target="#modalToggle2" data-bs-toggle="modal" data-bs-dismiss="modal">
@@ -828,11 +835,11 @@
           </div>
 
           <!-- Edit modal 3 -->
-          <div class="modal fade" id="modalToggle3" aria-hidden="true" aria-labelledby="modalToggleLabel3" tabindex="-1">
+          <div class="modal fade" id="editModal" aria-hidden="true" aria-labelledby="editModalLabel" tabindex="-1">
             <div class="modal-dialog modal-dialog-centered">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="modalToggleLabel3">Edit Sponsor</h5>
+                  <h5 class="modal-title" id="editModalLabel">Edit Sponsor</h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
